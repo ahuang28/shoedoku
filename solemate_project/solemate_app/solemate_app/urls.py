@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.contrib.staticfiles.views import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('solemate/', include("solemate.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        path('assets/<path:file_path>', serve, {'document_root': 'assets'}),
+    ]

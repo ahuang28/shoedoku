@@ -8,7 +8,7 @@ def cid_to_path(cid : str):
     '''Converts a shoe id to the path to the image of the shoe'''
     id_color = cid.split("-")
     #join the id_color[0] and id_color[1] with a dot inbetween and add .jpg
-    new_path = Path("static/images/" + id_color[0] + "." + id_color[1] + ".jpg")
+    new_path = Path("../assets/images/" + id_color[0] + "." + id_color[1] + ".jpg")
     return new_path
 
 def path_to_cid(path : Path):
@@ -27,7 +27,7 @@ def path_to_cid(path : Path):
 
 def get_first_image():
     '''Returns the path to the first image to be displayed in the app'''
-    df = pd.read_csv("static/data/shoes_similarity.csv")
+    df = pd.read_csv(Path("solemate_app/assets/data/shoes_similarity.csv"))
     df_sample = df.sample(n=1)
     return cid_to_path(df_sample["CID"].iloc[0])    
 
@@ -40,7 +40,7 @@ def get_next_image(accept : bool, current_image : str):
     ''' 
     shoe_id = path_to_cid(current_image)
     
-    df = pd.read_csv("static/data/shoes_similarity.csv")
+    df = pd.read_csv(Path("solemate_app/assets/data/shoes_similarity.csv"))
     #get the row of the shoe
     shoe_row = df[df["CID"] == shoe_id]
     #get the next cid most similar to the shoe
