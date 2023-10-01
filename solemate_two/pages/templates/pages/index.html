@@ -144,7 +144,9 @@
             top: 545px;
             width: 725px;
             height: 725px;
+            border: none;
             background-color: #4f4f4f;
+            
         }
 
         .shoe-caption {
@@ -155,6 +157,12 @@
             font-weight: 400;
             font-size: 40px;
             text-align: center;
+        }
+        #image-box {
+            width: 735px;
+            height: 735px;
+            object-fit: contain;
+            border:none;
         }
 
     </style>
@@ -178,7 +186,6 @@
         <img id="image-box" src= "{% static image_path|default:'images/103787.3.jpg' "%}" >
     </div>
 <!--    THIS IS FOR THE CAPTION UNDERNEATH FOR THE BRAND AND TYPE OF SHOE-->
-    <p class="shoe-caption">BRAND SHOE TYPE</p>
 
 
     <div class="pic-buttons">

@@ -2,7 +2,7 @@
 from pathlib import Path
 import pandas as pd 
 import random
-from .models import Sneaker
+
 
 def cid_to_path(cid : str):
     '''Converts a shoe id to the path to the image of the shoe'''
@@ -41,8 +41,8 @@ def get_next_image(accept : bool, current_image : str):
     if accept:
         col = str(random.randint(1,3))
         new_shoe_id = shoe_row[col].iloc[0]
-        like_shoe = Sneaker(cid=path_to_cid(current_image))
-        like_shoe.save()
+        # like_shoe = Sneaker(cid=path_to_cid(current_image))
+        # like_shoe.save()
         
     else : 
         col = str(random.randint(4,5))
