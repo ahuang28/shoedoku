@@ -4,8 +4,30 @@
     <title>My Results Page</title>
 </head>
 <body>
-<h1>Welcome to My Results Page</h1>
-<button onclick="location.href='{% url 'index' %}'">Home</button>
-<button onclick="location.href='{% url 'results' %}'">Results</button>
+    <div class="ellipse"></div>
+    <h1 class="title">
+        Solemate
+    </h1>
+    <div class="shopping-button">
+        <img src="../../assets/icons/shopping.svg">
+    </div>
+
+<!--    REPEATING PICTURES-->
+    
+
+    <footer>
+        <button onclick="location.href='{% url 'index' %}'" class="card-button">
+            <img src="../../assets/icons/light-card.svg" alt="cards">
+        </button>
+        <div class="mail-button">
+            <img src="../../assets/icons/mail.svg">
+        </div>
+        <button onclick="location.href='{% url 'results' %}'" class="heart-button">
+            <img src="../../assets/icons/dark-hearted.svg" alt="hearted">
+        </button>
+        <div class="profile-button">
+            <img src="../../assets/icons/profile.svg">
+        </div>
+    </footer>
 </body>
 </html>
