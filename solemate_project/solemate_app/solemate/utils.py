@@ -39,7 +39,7 @@ def get_next_image(accept : bool, current_image : str):
                 current_image (str): the path of the last shoe
     ''' 
     shoe_id = path_to_cid(current_image)
-    print(shoe_id)
+    
     df = pd.read_csv("static/data/shoes_similarity.csv")
     #get the row of the shoe
     shoe_row = df[df["CID"] == shoe_id]
