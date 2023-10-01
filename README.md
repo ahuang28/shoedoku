@@ -1,7 +1,7 @@
 # shoedoku
 
-![](./iPhone 14 - 5)
-![](./iPhone 14 - 6)
+![Home Page](./images/home_page.png)
+![Likes Page](./images/liked_page.png)
 
 ## Inspiration
 First of all we, love shoes so much we don't wear shoes and keep them displayed. That said, searching over the net for shoes isn't the most fun thing to do, it takes a while and you might not even find the pair for you. So why not make an app that works like tinder, simple to use and matches pretty well. 
