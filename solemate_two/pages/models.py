@@ -8,7 +8,7 @@ class Sneaker(models.Model):
 
     def save(self, *args, **kwargs):
         # Calculate the path based on cid using the cid_to_path function
-        self.path = cid_to_path(str(self.cid))
+        self.path = str(cid_to_path(str(self.cid)))
         super(Sneaker, self).save(*args, **kwargs)
     
 

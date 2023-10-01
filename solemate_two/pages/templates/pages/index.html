@@ -166,48 +166,52 @@
     </h1>
     <div class="shopping-button">
         
-        <img src="/assets/icons/shopping.svg">
+        <img src="/static/icons/shopping.svg">
     </div>
     <div class="rounded-rec"></div>
 
     
 <!--    WILLIAM PUT THE PHOTO HERE-->
     <div class="shoe">
-        <img id="image-box" src= {{ image_path|default_if_none:"assets/images/103787.3.jpg" }} >
+        {% load static %}
+        
+        <img id="image-box" src= "{% static image_path|default:'images/103787.3.jpg' "%}" >
     </div>
 <!--    THIS IS FOR THE CAPTION UNDERNEATH FOR THE BRAND AND TYPE OF SHOE-->
     <p class="shoe-caption">BRAND SHOE TYPE</p>
 
 
     <div class="pic-buttons">
-        <form action= {% url 'change_image' button='no' current_image=image_path %} method="post">
-            {% csrf_token %}
-            <button class="no">
-                <img src="/assets/icons/no.svg" alt="no">
+        <form action="{% url 'change_image' button='no' %}" method="post">
+            {% csrf_token %} 
+            <input type="hidden" name="image_path" value="{{ image_path }}">
+            <button class="no" type="submit">
+                <img src="/static/icons/no.svg" alt="no">
             </button>
         </form>
         <button class="info">
-            <img src="/assets/icons/info.svg" alt="info">
+            <img src="/static/icons/info.svg" alt="info">
         </button>
-        <form method="post" action="{% url 'change_image' button='accept' current_image=image_path %}">
-            {% csrf_token %}
+        <form action="{% url 'change_image' button='like' %}" method="post">
+            {% csrf_token %} 
+            <input type="hidden" name="image_path" value="{{ image_path }}">
             <button class="like">
-                <img src="/assets/icons/like.svg" alt="like">
+                <img src="/static/icons/like.svg" alt="like">
             </button>
         </form>
     </div> 
     <footer>
         <button onclick="location.href='{% url 'index' %}'" class="card-button">
-            <img src="/assets/icons/card.svg" alt="cards">
+            <img src="/static/icons/card.svg" alt="cards">
         </button>
         <div class="mail-button">
-            <img src="/assets/icons/mail.svg">
+            <img src="/static/icons/mail.svg">
         </div>
         <button onclick="location.href='{% url 'results' %}'" class="heart-button">
-            <img src="/assets/icons/hearted.svg" alt="hearted">
+            <img src="/static/icons/hearted.svg" alt="hearted">
         </button>
         <div class="profile-button">
-            <img src="/assets/icons/profile.svg">
+            <img src="/static/icons/profile.svg">
         </div>
     </footer>
 </body>

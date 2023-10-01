@@ -19,15 +19,19 @@ from django.urls import path, include
 from django.conf import settings
 from django.contrib.staticfiles.views import serve
 from pages import views
+import os
+
+from django.conf import settings
+base_dir = settings.BASE_DIR
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index, name='index'),
     path('results/',views.results, name='results'),
-    path('index/<str:button>/<str:current_image>/',views.change_image, name='change_image'),
+    path('index/',include("pages.urls")),
 ]
 
 if settings.DEBUG:
     urlpatterns += [
-        path('assets/<path:file_path>', serve, {'document_root': 'assets'}),
+        path(os.path.join(os.path.dirname(base_dir),"pages/assets/<path:file_path>"),serve, {'document_root': 'assets'}),
     ]

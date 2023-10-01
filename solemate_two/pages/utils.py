@@ -2,20 +2,21 @@
 from pathlib import Path
 import pandas as pd 
 import random
-
+from .models import Sneaker
 
 def cid_to_path(cid : str):
     '''Converts a shoe id to the path to the image of the shoe'''
     id_color = cid.split("-")
     #join the id_color[0] and id_color[1] with a dot inbetween and add .jpg
-    new_path = Path("pages/assets/images/" + id_color[0] + "." + id_color[1] + ".jpg")
-    return new_path
+    new_path = "images/" + id_color[0] + "." + id_color[1] + ".jpg"
+    return str(new_path)
 
 def path_to_cid(path : Path):
     '''Converts a path to the image of the shoe to the shoe id'''
     #split the path by the slashes
     path = str(path)
-    path = path.split("\\")
+    print(path)
+    path = path.split("/")
     #get the last element of the list
     path = path[-1]
     #split the path by the dots
@@ -25,13 +26,6 @@ def path_to_cid(path : Path):
     color = path[1]
     return cid + "-" + color
 
-def get_first_image():
-    '''Returns the path to the first image to be displayed in the app'''
-    df = pd.read_csv(Path("pages/assets/data/shoes_similarity.csv"))
-    df_sample = df.sample(n=1)
-    return cid_to_path(df_sample["CID"].iloc[0])    
-
-    
 def get_next_image(accept : bool, current_image : str):
     '''Gets the next image to be displayed in the app.
             Parameters: 
@@ -39,16 +33,19 @@ def get_next_image(accept : bool, current_image : str):
                 current_image (str): the path of the last shoe
     ''' 
     shoe_id = path_to_cid(current_image)
-    
-    df = pd.read_csv(Path("pages/assets/data/shoes_similarity.csv"))
+    print(shoe_id)
+    df = pd.read_csv(Path("pages/static/data/shoes_similarity.csv"))
     #get the row of the shoe
     shoe_row = df[df["CID"] == shoe_id]
     #get the next cid most similar to the shoe
     if accept:
-        col = str(random.randint(1,2))
+        col = str(random.randint(1,3))
         new_shoe_id = shoe_row[col].iloc[0]
+        like_shoe = Sneaker(cid=path_to_cid(current_image))
+        like_shoe.save()
+        
     else : 
-        col = str(random.randint(3,5))
+        col = str(random.randint(4,5))
         new_shoe_id = shoe_row[col].iloc[0]
     
     return cid_to_path(new_shoe_id)
