@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Results Page</title>
+    <title>My Solemate Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Syne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            overflow: hidden;
+            font-family: Syne, sans-serif;
+            text-transform: uppercase;
+            background-color: #3D5A80;
+            font-weight: 400;
+        }
+
+        .ellipse {
+            width: 1500px;       /* Adjust the width as needed */
+            height: 1098px;       /* Adjust the height as needed */
+            position: absolute;
+            left: -350px;
+            top: -250px;
+            background-color: #98C1D9; /* Background color */
+            border-radius: 50%;  /* 50% rounded corners */
+        }
+
+        header {
+            padding: 10px;
+            align-content: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ffffff;
+            height: 200px;
+            font-weight: 700;
+            margin: 20px 16px;
+        }
+
+        footer {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 980px;
+            height: 188px;
+            background-color: #ffffff;
+        }
+
+        .card-button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 146px;
+            bottom: 50px;
+            width: 70px;
+            height: 65px;
+        }
+
+        .heart-button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 567.3px;
+            bottom: 50px;
+            width: 80.3px;
+            height: 75.3px;
+        }
+
+        .mail-button {
+            position: absolute;
+            left: 369px;
+            bottom: 50px;
+            width: 75.3px;
+            height: 62.76px;
+        }
+
+        .profile-button {
+            position: absolute;
+            left: 788.2px;
+            bottom: 50px;
+            width: 75.3px;
+            height: 75.3px;
+        }
+
+        .shopping-button {
+            position: absolute;
+            left: 851px;
+            top: 43px;
+            width: 103px;
+            height: 103px;
+        }
+
+    </style>
 </head>
 <body>
-<h1>Welcome to My Results Page</h1>
-<button onclick="location.href='{% url 'index' %}'">Home</button>
-<button onclick="location.href='{% url 'results' %}'">Results</button>
+<header>
+    <h1>Solemate</h1>
+</header>
+<!--    <div class="ellipse"></div>-->
+<div class="shopping-button">
+    <img src="../../assets/icons/shopping.svg">
+</div>
+<footer>
+    <button onclick="location.href='{% url 'index' %}'" class="card-button">
+        <img src="../../assets/icons/light-card.svg" alt="cards">
+    </button>
+    <div class="mail-button">
+        <img src="../../assets/icons/mail.svg">
+    </div>
+    <button onclick="location.href='{% url 'results' %}'" class="heart-button">
+        <img src="../../assets/icons/dark-hearted.svg" alt="hearted">
+    </button>
+    <div class="profile-button">
+        <img src="../../assets/icons/profile.svg">
+    </div>
+</footer>
 </body>
 </html>
+
