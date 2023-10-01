@@ -14,24 +14,22 @@
         }
 
         .ellipse {
-            width: 1500px;       /* Adjust the width as needed */
-            height: 1098px;       /* Adjust the height as needed */
-            position: absolute;
-            left: -350px;
-            top: -250px;
+            width: 1506px;       /* Adjust the width as needed */
+            height: 1102px;       /* Adjust the height as needed */
+            position: fixed;
+            left: -308.76px;
+            top: -258.56px;
             background-color: #98C1D9; /* Background color */
             border-radius: 50%;  /* 50% rounded corners */
         }
 
-        header {
-            padding: 10px;
-            align-content: center;
-            justify-content: center;
-            font-size: 24px;
+        .title {
+            font-size: 50px;
             color: #ffffff;
-            height: 200px;
             font-weight: 700;
-            margin: 20px 16px;
+            position: fixed;
+            left: 35px;
+            top: 28px;
         }
 
         footer {
@@ -61,7 +59,7 @@
             cursor: pointer;
             position: absolute;
             left: 146px;
-            bottom: 50px;
+            bottom: 60px;
             width: 70px;
             height: 65px;
         }
@@ -73,7 +71,7 @@
             margin: 0;
             cursor: pointer;
             position: absolute;
-            left: 567.3px;
+            left: 570px;
             bottom: 50px;
             width: 80.3px;
             height: 75.3px;
@@ -81,8 +79,8 @@
 
         .mail-button {
             position: absolute;
-            left: 369px;
-            bottom: 50px;
+            left: 360px;
+            bottom: 60px;
             width: 75.3px;
             height: 62.76px;
         }
@@ -90,7 +88,7 @@
         .profile-button {
             position: absolute;
             left: 788.2px;
-            bottom: 50px;
+            bottom: 55px;
             width: 75.3px;
             height: 75.3px;
         }
@@ -140,17 +138,43 @@
             height: 103px;
         }
 
+        .shoe {
+            position: absolute;
+            left: 128px;
+            top: 545px;
+            width: 725px;
+            height: 725px;
+            background-color: #4f4f4f;
+        }
+
+        .shoe-caption {
+            position: absolute;
+            left: 306.3px;
+            top: 1240px;
+            font-family: Syne, sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Solemate</h1>
-    </header>
-<!--    <div class="ellipse"></div>-->
+    <div class="ellipse"></div>
+    <h1 class="title">
+        Solemate
+    </h1>
     <div class="shopping-button">
         <img src="../../assets/icons/shopping.svg">
     </div>
     <div class="rounded-rec"></div>
+
+<!--    WILLIAM PUT THE PHOTO HERE-->
+    <div class="shoe"></div>
+<!--    THIS IS FOR THE CAPTION UNDERNEATH FOR THE BRAND AND TYPE OF SHOE-->
+    <p class="shoe-caption">BRAND SHOE TYPE</p>
+
+
     <div class="pic-buttons">
         <button class="no">
             <img src="../../assets/icons/no.svg" alt="no">
