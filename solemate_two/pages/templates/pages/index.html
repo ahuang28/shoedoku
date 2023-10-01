@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Solemate Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Syne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            overflow: hidden;
+            font-family: Syne, sans-serif;
+            text-transform: uppercase;
+            background-color: #3D5A80;
+            font-weight: 400;
+        }
+
+        .ellipse {
+            width: 1506px;       /* Adjust the width as needed */
+            height: 1102px;       /* Adjust the height as needed */
+            position: fixed;
+            left: -308.76px;
+            top: -258.56px;
+            background-color: #98C1D9; /* Background color */
+            border-radius: 50%;  /* 50% rounded corners */
+        }
+
+        .title {
+            font-size: 50px;
+            color: #ffffff;
+            font-weight: 700;
+            position: fixed;
+            left: 35px;
+            top: 28px;
+        }
+
+        footer {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 980px;
+            height: 188px;
+            background-color: #ffffff;
+        }
+
+        .rounded-rec {
+            width: 806px;
+            height: 1293px;
+            border-radius: 50px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 86px;
+            top: 452px;
+        }
+
+        .card-button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 146px;
+            bottom: 60px;
+            width: 70px;
+            height: 65px;
+        }
+
+        .heart-button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 570px;
+            bottom: 50px;
+            width: 80.3px;
+            height: 75.3px;
+        }
+
+        .mail-button {
+            position: absolute;
+            left: 360px;
+            bottom: 60px;
+            width: 75.3px;
+            height: 62.76px;
+        }
+
+        .profile-button {
+            position: absolute;
+            left: 788.2px;
+            bottom: 55px;
+            width: 75.3px;
+            height: 75.3px;
+        }
+
+        .pic-buttons {
+            position: absolute;
+            top: 1496px;
+            width: 133px;
+            height: 133px;
+        }
+
+        .no {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 213px;
+        }
+
+        .info {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 421px;
+        }
+
+        .like {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            position: absolute;
+            left: 630px;
+        }
+
+        .shopping-button {
+            position: absolute;
+            left: 851px;
+            top: 43px;
+            width: 103px;
+            height: 103px;
+        }
+
+        .shoe {
+            position: absolute;
+            left: 128px;
+            top: 545px;
+            width: 725px;
+            height: 725px;
+            background-color: #4f4f4f;
+        }
+
+        .shoe-caption {
+            position: absolute;
+            left: 306.3px;
+            top: 1240px;
+            font-family: Syne, sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ellipse"></div>
+    <h1 class="title">
+        Solemate
+    </h1>
+    <div class="shopping-button">
+        
+        <img src="/assets/icons/shopping.svg">
+    </div>
+    <div class="rounded-rec"></div>
+
+    
+<!--    WILLIAM PUT THE PHOTO HERE-->
+    <div class="shoe">
+        <img id="image-box" src= {{ image_path|default_if_none:"assets/images/103787.3.jpg" }} >
+    </div>
+<!--    THIS IS FOR THE CAPTION UNDERNEATH FOR THE BRAND AND TYPE OF SHOE-->
+    <p class="shoe-caption">BRAND SHOE TYPE</p>
+
+
+    <div class="pic-buttons">
+        <form action= {% url 'change_image' button='no' current_image=image_path %} method="post">
+            {% csrf_token %}
+            <button class="no">
+                <img src="/assets/icons/no.svg" alt="no">
+            </button>
+        </form>
+        <button class="info">
+            <img src="/assets/icons/info.svg" alt="info">
+        </button>
+        <form method="post" action="{% url 'change_image' button='accept' current_image=image_path %}">
+            {% csrf_token %}
+            <button class="like">
+                <img src="/assets/icons/like.svg" alt="like">
+            </button>
+        </form>
+    </div> 
+    <footer>
+        <button onclick="location.href='{% url 'index' %}'" class="card-button">
+            <img src="/assets/icons/card.svg" alt="cards">
+        </button>
+        <div class="mail-button">
+            <img src="/assets/icons/mail.svg">
+        </div>
+        <button onclick="location.href='{% url 'results' %}'" class="heart-button">
+            <img src="/assets/icons/hearted.svg" alt="hearted">
+        </button>
+        <div class="profile-button">
+            <img src="/assets/icons/profile.svg">
+        </div>
+    </footer>
+</body>
+</html>
+
