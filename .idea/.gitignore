@@ -6,6 +6,10 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-/venv/
+/venv/*
+/solemate_two/*
 /shoedoku_env/
-/solomate_project/solemate_venv/
+#/solemate_two/pages/__pycache__/*
+#/solemate_two/pages/migrations/__pycache__/*
+#/solemate_two/solemate_two/__pycache__/*
+**/__pycache__/*
