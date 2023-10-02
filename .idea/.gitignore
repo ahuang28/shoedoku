@@ -7,6 +7,7 @@
 /dataSources/
 /dataSources.local.xml
 **/venv/*
+../venv/*
 /solemate_two/*
 /shoedoku_env/
 #/solemate_two/pages/__pycache__/*
